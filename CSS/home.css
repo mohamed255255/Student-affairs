@@ -1,0 +1,34 @@
+footer {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+body{
+    background : #01ecd5;
+}
+.frame {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    top:20px
+
+}
+
+/* Style for the profile picture */
+#profilePicture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    cursor: pointer;
+}
+
+.li_nav{
+    margin-top: -30px;
+}
