@@ -29,3 +29,10 @@ Route::post('/discover-celebrities', [CelebrityController::class, 'getCelebritie
 
 // Example route to handle language selection
 Route::get("locale/{lang}",[\App\Http\Controllers\LocalizationController::class , 'setLang']);
+
+Route::get('languageConverter/{locale}', function($locale) {
+    if(in_array($locale , ['ar', 'en'])) {
+        session()->put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('languageConverter');

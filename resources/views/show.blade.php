@@ -6,52 +6,52 @@
 <div class="card">
 	<div class="card-header">
 		<div class="row">
-			<div class="col col-md-6"><b>Student Details</b></div>
+			<div class="col col-md-6"><b>@lang("public.details")</b></div>
 			<div class="col col-md-6">
-				<a href="{{ route('students.index') }}" class="btn btn-primary btn-sm float-end">View All</a>
+				<a href="{{ route('students.index') }}" class="btn btn-primary btn-sm float-end">@lang("public.viewall")</a>
 			</div>
 		</div>
 	</div>
 	<div class="card">
     <div class="card-header">
-        <h5 class="mb-0">Student Profile</h5>
+        <h5 class="mb-0">@lang("public.profile")</h5>
     </div>
     <div class="card-body">
     <div class="row">
         <!-- Left Column - Student Details -->
         <div class="col-md-6">
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Name</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.name")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_name }}
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Email</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.email")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_email }}
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Username</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.username")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_username }}
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Birthdate</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.birthdate")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_birthdate }}
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Phone</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.phone")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_phone }}
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-4 col-label-form"><b>Student Address</b></label>
+                <label class="col-sm-4 col-label-form"><b>@lang("public.address")</b></label>
                 <div class="col-sm-8">
                     {{ $student->student_address }}
                 </div>
@@ -62,7 +62,7 @@
         <div class="col-md-6">
             <div class="row mb-3">
                 <div class="col-sm-12 text-center">
-                    <b>Student Image</b>
+                    <b>@lang("public.image")</b>
                 </div>
             </div>
             <div class="row">

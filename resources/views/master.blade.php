@@ -27,6 +27,7 @@
             min-width: 160px;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             z-index: 1;
+            right: 4px;
         }
         .dropdown-menu a {
             color: black;
@@ -54,8 +55,8 @@
                     <i class="fa-solid fa-earth-americas"></i>@lang('public.LANGUAGES')
                 </li>
                 <div id="myDropdown" class="dropdown-menu">
-                    <a href="locale/ar"  > Arabic </a>
-                    <a href="locale/en"  > English</a>
+                    <a href="{{ route('languageConverter', 'ar') }}"> @lang('public.Arabic') </a>
+                    <a href="{{ route('languageConverter', 'en') }}"> @lang('public.English')</a>
                 </div>
             </div>
 
@@ -65,7 +66,7 @@
         @yield('content')
     </div>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Your Website. All rights reserved.</p>
+        <p>&copy; <?php echo date("Y"); ?> @lang("public.footer")</p>
     </footer>
 
 <script>

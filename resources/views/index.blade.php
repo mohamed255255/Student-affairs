@@ -13,20 +13,20 @@
 <div class="card">
 	<div class="card-header">
 		<div class="row">
-			<div class="col col-md-6"><b>Student Data</b></div>
+			<div class="col col-md-6"><b>@lang('public.data')</b></div>
 			<div class="col col-md-6">
-				<a href="{{ route('students.create') }}" class="btn btn-success btn-sm float-end">Add</a>
+				<a href="{{ route('students.create') }}" class="btn btn-success btn-sm float-end">@lang('public.add')</a>
 			</div>
 		</div>
 	</div>
 	<div class="card-body">
 		<table class="table table-bordered">
 			<tr>
-				<th>Image</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Phone Number</th>
-				<th>Action</th>
+				<th>@lang('public.image')</th>
+				<th>@lang('public.name')</th>
+				<th>@lang('public.email')</th>
+				<th>@lang('public.phone')</th>
+				<th>@lang('public.action')</th>
 			</tr>
 			@if(count($data) > 0)
 
@@ -41,8 +41,8 @@
 							<form method="post" action="{{ route('students.destroy', $row->id) }}">
 								@csrf
 								@method('DELETE')
-								<a href="{{ route('students.show', $row->id) }}" class="btn btn-primary btn-sm">View</a>
-								<a href="{{ route('students.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+								<a href="{{ route('students.show', $row->id) }}" class="btn btn-primary btn-sm">@lang('public.view')</a>
+								<a href="{{ route('students.edit', $row->id) }}" class="btn btn-warning btn-sm">@lang('public.edit')</a>
 								<input type="submit" class="btn btn-danger btn-sm" value="Delete" />
 							</form>
 
@@ -52,7 +52,7 @@
 				@endforeach
 			@else
 				<tr>
-					<td colspan="5" class="text-center">No Data Found</td>
+					<td colspan="5" class="text-center">@lang('public.nodatafound')</td>
 				</tr>
 			@endif
 		</table>

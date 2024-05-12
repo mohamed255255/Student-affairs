@@ -1,0 +1,31 @@
+<?php
+return [
+    "Home"          => "Home",
+    "ABOUT"         => "ABOUT US",
+    "data"          => "Student Data",
+    "Image"         => "Image",
+    "name"          => "Student name",
+    "email"         => "student email",
+    "password"      => "password",
+    "confirm"       => "confirm password",
+    "newpassword"   => "new password",
+    "oldpassword"   => "old password",
+    "Phone Number"  => "Phone Number",
+    "celebrity"     =>"Discover shared celebrity birthdays!",
+    "viewall"       =>"view all",
+    "address"       => "student address" ,
+    "phone"         => "phone number",
+    "username"      => "user name",
+    "birthdate"     =>"birth date",
+    "image"         =>"profile image",
+    "action"        => "Action",
+    "add"           => "Add",
+    "LANGUAGES"     => "LANGUAGES",
+    "nodatafound"   => "No data found" ,
+    "details"       => " student details",
+    "profile"       =>"student profile",
+    "footer"        => " Your website. All rights reserved.",
+    "Arabic"        => "Arabic",
+    "English"       => "English"
+];
+?>
