@@ -43,7 +43,7 @@
 								@method('DELETE')
 								<a href="{{ route('students.show', $row->id) }}" class="btn btn-primary btn-sm">@lang('public.view')</a>
 								<a href="{{ route('students.edit', $row->id) }}" class="btn btn-warning btn-sm">@lang('public.edit')</a>
-								<input type="submit" class="btn btn-danger btn-sm" value="Delete" />
+								<input type="submit" class="btn btn-danger btn-sm" value="@lang('public.delete')" />
 							</form>
 
 						</td>

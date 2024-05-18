@@ -55,7 +55,7 @@ class StudentController extends Controller
                 'regex:/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/'
             ],'student_image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
         ], [
-            'student_phone.regex' => 'The phone number must be 11 digits (e.g., 01123456789).',
+            'student_phone.regex'  => 'The phone number must be 11 digits (e.g., 01123456789).',
             'student_password.min' => 'The password must be at least :min characters.',
             'student_password.regex' => 'The password must contain at least 1 number and 1 special character (!@#$%^&*).',
         ]);
@@ -64,7 +64,6 @@ class StudentController extends Controller
 
         request()->student_image->move(public_path('images'), $file_name);
 
-        $student = new Student;
 
         $student = new Student();
         $student->student_name = $request->student_name;
@@ -79,7 +78,7 @@ class StudentController extends Controller
         $student->save();
 
         $this->sendNewUserRegisteredEmail($student->student_name, $student->student_email);
-        return redirect()->route('students.index')->with('success', 'Student Added successfully.');
+        return redirect()->route('students.index')->with('success', trans('public.added'));
     }
 
 
@@ -90,11 +89,12 @@ class StudentController extends Controller
      * @param string $email
      * @return void
      */
-    private function sendNewUserRegisteredEmail(string $name, string $email)
+    public function sendNewUserRegisteredEmail(string $name, string $email)
     {
         // Prepare and send the email
-        Mail::to("mohamedgaber255255@gmail.com")->send(new MyEmail($name));
+        Mail::to("fcailavarelsendemail@gmail.com")->send(new MyEmail($name));
     }
+
 
     /**
      * Display the specified resource.
@@ -173,7 +173,7 @@ class StudentController extends Controller
             $student->update(['password' => Hash::make($request->new_password)]);
         }
 
-        return redirect()->route('students.index')->with('success', 'Student data has been updated successfully.');
+        return redirect()->route('students.index')->with('success', trans('public.updated'));
     }
 
     /**
@@ -186,7 +186,17 @@ class StudentController extends Controller
     {
         $student->delete();
 
-        return redirect()->route('students.index')->with('success', 'Student Data deleted successfully');
+        return redirect()->route('students.index')->with('success', trans('public.deleted'));
+    }
+
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('student_image')) {
+            $image = $request->file('student_image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $filename);
+            return response()->json(['filename' => $filename]);
+        }
     }
 }
 

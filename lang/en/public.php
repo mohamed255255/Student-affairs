@@ -24,8 +24,16 @@ return [
     "nodatafound"   => "No data found" ,
     "details"       => " student details",
     "profile"       =>"student profile",
+    "view"          => "view",
+    "update"        => "update",
+    "edit"          => "edit",
     "footer"        => " Your website. All rights reserved.",
     "Arabic"        => "Arabic",
-    "English"       => "English"
+    "English"       => "English",
+    "deleted"       => "Student Data deleted successfully",
+    "updated"       => "Student data has been updated successfully ",
+    "added"         => "Student Added successfully",
+    "delete"        => "delete",
+
 ];
 ?>

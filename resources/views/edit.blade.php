@@ -80,15 +80,15 @@
             <!-- Right Column - Student Image -->
             <div class="col-md-6">
                 <div class="row mb-2">
-                    <label class="col-sm-12 col-label-form text-center">@lang("public.image")</label>
+                    <label class="col-sm-12 col-label-form text-center">Student Image</label>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <img src="{{ asset('images/' . $student->student_image) }}" width="200" class="img-thumbnail" />
-						<div class="col-sm-12">
-							<input type="file" name="student_image" style=" width: 113px;" />
-							<input type="hidden" name="hidden_student_image" value="{{ $student->student_image }}" />
-						</div>
+                        <img id="student_image_preview" src="{{ asset('images/' . $student->student_image) }}" width="200" class="img-thumbnail" />
+                        <div class="col-sm-12 mt-2">
+                            <input type="file" name="student_image" id="student_image" style="width: 113px;" onchange="previewImage();" />
+                            <input type="hidden" name="hidden_student_image" value="{{ $student->student_image }}" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,42 @@
         </div>
     </form>
 </div>
-
 </div>
+<script>
+    function previewImage() {
+        var fileInput = document.getElementById('student_image');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
 
+        reader.onload = function(e) {
+            $('#student_image_preview').attr('src', e.target.result);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file); // Convert file to data URL
+        }
+    }
+    $(document).ready(function() {
+        $('#student_image').change(function() {
+            var formData = new FormData();
+            formData.append('student_image', $('#student_image')[0].files[0]);
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('students.uploadImage') }}", // Define your route for image upload
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    // Update hidden input with new image filename
+                    $('input[name="hidden_student_image"]').val(response.filename);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    });
+
+</script>
 @endsection('content')
