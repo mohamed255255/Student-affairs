@@ -1,4 +1,4 @@
-@extends('StudentRegistirationForm.master')
+@extends('admin.master')
 
 @section('content')
 

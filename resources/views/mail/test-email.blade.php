@@ -1,1 +1,0 @@
-A new user {{$name}} is registered to the system.

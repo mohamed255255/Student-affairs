@@ -11,14 +11,17 @@ use Illuminate\Support\Facades\Hash;
 class StudentController extends Controller{
 
     public function index(){
-        $data = Student::latest()->paginate(5);
-
-        return view('StudentRegistirationForm.index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.index');
     }
 
+    public function GetStudentData(){
+        $data = Student::latest()->paginate(5);
+        return view('admin.studentCRUD', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
 
     public function create(){
-        return view('StudentRegistirationForm.create');
+        return view('admin.create');
     }
 
 
@@ -68,13 +71,13 @@ class StudentController extends Controller{
 
 
     public function show(Student $student){
-        return view('StudentRegistirationForm.show', compact('student'));
+        return view('admin.show', compact('student'));
     }
 
 
 
     public function edit(Student $student){
-        return view('StudentRegistirationForm.edit', compact('student'));
+        return view('admin.edit', compact('student'));
     }
 
 

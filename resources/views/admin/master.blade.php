@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel 9 CRUD Application</title>
-    <!-- In your master.blade.php or layout file -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://temp.staticsave.com/663e7d60124b4.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
 
     <style>
         footer {
@@ -48,8 +50,11 @@
     <nav>
         <div class="logo"><i class="fa-brands fa-algolia" style="margin-right: 5px;"></i>FCI</div>
         <ul class="ul_nav">
-            <a href="{{ route('students.index') }}" style="text-decoration: none;"><li class="li_nav" id="current_tab"><i class="fas fa-home"></i>@lang('public.Home')</li></a>
-            <li class="li_nav"><i class="fa-solid fa-address-card"></i>@lang('public.ABOUT')</li>
+            <a href="{{ route('admin.index') }}" style="text-decoration: none;">
+                <li class="li_nav" id="current_tab"><i class="fas fa-home"></i>@lang('public.Home')</li></a>
+            <a href="{{ route('admin.notification') }}" style="text-decoration: none;">
+                <li class="li_nav" id="current_tab"><i class="fa-regular fa-bell" style="color: #1c1c1c;"></i>@lang('public.Notifications')</li>
+            </a>
             <div class="dropdown">
                 <li class="li_nav" onclick="toggleDropdown()">
                     <i class="fa-solid fa-earth-americas"></i>@lang('public.LANGUAGES')
@@ -102,7 +107,6 @@
 
 
 </script>
-
 </body>
 </html>
 
