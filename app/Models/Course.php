@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class course extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -14,8 +14,13 @@ class Course extends Model
         'pre-requisites',
         'max_students'
     ];
-    public function students()
+    public function users()
     {
-        return $this->belongsToMany(Student::class)->withTimestamps();
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+
+    public function grades(){
+        return $this->hasMany(grade::class)->withTimestamps();
     }
 }

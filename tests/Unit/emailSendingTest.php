@@ -1,7 +1,7 @@
 <?php
 namespace Tests\Unit;
 
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use App\Mail\MyEmail;
 use Illuminate\Support\Facades\Mail;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +13,7 @@ class EmailSendingTest extends TestCase
         // Mock the Mail facade
         Mail::fake();
 
-        $controller = new StudentController();
+        $controller = new UserController();
         $controller->sendNewUserRegisteredEmail('John Doe', 'john@example.com');
 
         // Assert that an email was sent

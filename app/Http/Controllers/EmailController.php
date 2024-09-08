@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Mail\VerificationEmail;
-use Illuminate\Http\Request;
 use Illuminate\support\Facades\Mail;
 
 class EmailController extends Controller
