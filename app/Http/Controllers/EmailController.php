@@ -9,8 +9,8 @@ class EmailController extends Controller
 {
     public function sendEmail(){
         $toEmail = 'mohamedgaber255255@gmail.com';
-        $message = 'that is diabolical';
-        $subject = "OPEN ME HUGHIE";
+        $message = 'messageeeee';
+        $subject = "Laravel mail";
         Mail::to($toEmail)->send(new VerificationEmail($message , $subject));
     }
 }
