@@ -60,20 +60,14 @@ It is still a **work-in-progress (MVP)**, with around **60% completed**, but it 
 
 - Refactor some methods and controllers for better code quality.
 - apply service layer and move validations to seperate form request
-- Complete pending CRUD operations and validations.  
+- Complete pending CRUD operations and notifications implementation.
 - put more test classes.  
 - some blade files are not completed.  
 - Finish language translations.  
 - Implement **Laravel Sanctum** for token-based authentication to secure API access.---
 - Refactor routes to use **API routes (api.php)** instead of web routes, making the system stateless and more scalable for larger applications.
+- containerize the project
 
 ## ✅ Status
 
 This is an **MVP project** — not yet fully completed, but demonstrates the core concepts of authentication, role management, notifications, and CRUD functionality on a small scale in order to learn.
-
-## 📖 How to Run
-
-1. Clone the repo:  
-   ```bash
-   git clone https://github.com/your-username/student-affairs-mini.git
-   cd student-affairs-mini
