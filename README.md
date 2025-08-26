@@ -16,7 +16,7 @@ It is still a **work-in-progress (MVP)**, with around **60% completed**, but it 
 - **CRUD Operations**
   - Manage **students** and **courses** with create, read, update, and delete actions.
 
-- **Real-Time Notifications**
+- **Real-Time Notifications (ITS WORKS FINE BUT NOT COMPLETED)**
   - Laravel Broadcasting with listeners to send notifications to students in real time.
 
 - **Localization (Multi-Language Support)**
