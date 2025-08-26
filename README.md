@@ -64,7 +64,7 @@ It is still a **work-in-progress (MVP)**, with around **60% completed**, but it 
 - put more test classes.  
 - some blade files are not completed.  
 - Finish language translations.  
-- Implement **Laravel Sanctum** for token-based authentication to secure API access.---
+- Implement **Laravel Sanctum** for token-based authentication to secure API access
 - Refactor routes to use **API routes (api.php)** instead of web routes, making the system stateless and more scalable for larger applications.
 - containerize the project
 
